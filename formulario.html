@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>formulario hecho en clase</title>
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" bgcolor="#0d1b66" text="#FFFFFF">
+
+    <h1>Registro de Nuevo Producto</h1>
+    <p>Rellene el siguiente formulario para registrar un nuevo producto.</p>
+
+    <form action="/registrar-producto" method="post">
+
+        <table width="100%" border="0" cellpadding="10">
+
+            <tr valign="top">
+                <td width="50%">
+                    <label for="nombre-producto"><b>Nombre del producto</b></label><br>
+                    <input type="text" id="nombre-producto" name="nombre_producto" placeholder="Introduzca el nombre del producto" size="50">
+                </td>
+                <td width="50%">
+                    <label for="sku-producto"><b>SKU del producto</b></label><br>
+                    <input type="text" id="sku-producto" name="sku_producto" placeholder="Introduzca el SKU del producto" size="50">
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td colspan="2">
+                    <label for="descripcion-producto"><b>Descripción del producto</b></label><br>
+                    <textarea id="descripcion-producto" name="descripcion_producto" rows="6" cols="105" placeholder="Introduzca la descripción del producto"></textarea>
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td>
+                    <fieldset>
+                        <legend><b>Categoría del Producto</b></legend>
+                        <p>
+                            <input type="radio" id="cat-electronica" name="categoria" value="electronica" checked>
+                            <label for="cat-electronica">Electrónica</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="cat-ropa" name="categoria" value="ropa">
+                            <label for="cat-ropa">Ropa</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="cat-hogar" name="categoria" value="hogar">
+                            <label for="cat-hogar">Hogar y Jardín</label>
+                        </p>
+                    </fieldset>
+                </td>
+                <td>
+                    <label for="fabricante"><b>Fabricante / Proveedor</b></label><br>
+                    <select id="fabricante" name="fabricante" style="width: 200px;">
+                        <optgroup label="Fabricantes">
+                            <option value="A" selected>Fabricante A</option>
+                            <option value="B">Fabricante B</option>
+                        </optgroup>
+                        <optgroup label="Proveedores">
+                            <option value="C">Proveedor C</option>
+                            <option value="D">Proveedor D</option>
+                        </optgroup>
+                    </select>
+
+                    <br><br>
+
+                    <fieldset>
+                        <legend><b>Opciones</b></legend>
+                        <p>
+                            <input type="checkbox" id="opt-destacado" name="destacado" value="si">
+                            <label for="opt-destacado">Producto destacado</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="opt-envio" name="envio" value="si">
+                            <label for="opt-envio">Disponible para envío</label>
+                        </p>
+                    </fieldset>
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td>
+                    <label for="fecha-lanzamiento"><b>Fecha de lanzamiento</b></label><br>
+                    <input type="date" id="fecha-lanzamiento" name="fecha_lanzamiento">
+                </td>
+                <td>
+                    <label for="hora-oferta"><b>Hora de oferta especial</b></label><br>
+                    <input type="time" id="hora-oferta" name="hora_oferta">
+                </td>
+            </tr>
+            <tr valign="top">
+                <td>
+                    <label for="stock"><b>Cantidad en stock</b></label><br>
+                    <input type="number" id="stock" name="stock" value="0">
+                </td>
+                <td>
+                    <label for="color"><b>Color principal</b></label><br>
+                    <input type="color" id="color" name="color">
+                </td>
+            </tr>
+
+            <tr valign="top">
+                <td>
+                    </td>
+                <td>
+                    <label for="calidad"><b>Calidad del producto</b></label><br>
+                    <input type="range" id="calidad" name="calidad" min="0" max="100" value="50">
+                </td>
+             </tr>
+
+
+            <tr valign="top">
+                <td>
+                    <label for="url-producto"><b>URL del producto</b></label><br>
+                    <input type="url" id="url-producto" name="url_producto" placeholder="https://ejemplo.com" size="50">
+                </td>
+                <td>
+                    <label for="email-soporte"><b>Email de soporte</b></label><br>
+                    <input type="email" id="email-soporte" name="email_soporte" placeholder="soporte@ejemplo.com" size="30">
+                </td>
+            </tr>
+             <tr valign="top">
+                 <td>
+                    </td>
+                 <td>
+                    <label for="telefono"><b>Teléfono de contacto</b></label><br>
+                    <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890" size="30">
+                </td>
+             </tr>
+
+            <tr valign="top">
+                <td>
+                    <label for="etiquetas"><b>Buscar etiquetas</b></label><br>
+                    <input type="text" id="etiquetas" name="etiquetas" list="lista-etiquetas" placeholder="Buscar..." size="50">
+                    <datalist id="lista-etiquetas">
+                        <option value="Electrónica"></option>
+                        <option value="Ropa"></option>
+                        <option value="Oferta"></option>
+                        <option value="Nuevo"></option>
+                    </datalist>
+                </td>
+                <td>
+                    <label for="imagenes-producto"><b>Imágenes del producto</b></label><br>
+                    <input type="file" id="imagenes-producto" name="imagenes_producto" multiple>
+                </td>
+            </tr>
+
+        </table>
+
+        <hr>
+
+        <table align="right" border="0" cellpadding="5">
+            <tr>
+                <td>
+                    <button type="reset">Limpiar Formulario</button>
+                </td>
+                <td>
+                    <button type="submit">Registrar Producto</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    
+    <br><br><br>
+
+</body>
+</html>
